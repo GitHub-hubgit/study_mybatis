@@ -33,7 +33,12 @@
         <result property="name" column="tname"/>
         <collection property="list" column="tid" javaType="ArrayList" ofType="student" select="students"/>
     </resultMap>
-    <select id="students" resultType="student">
-        select * from student s where s.tid=#{tid}
+    <select id="students" resultMap="test">
+        select s.id sid,s.name sname,s.tid stid from student s where s.tid=#{tid}
     </select>
+    <resultMap id="test" type="student">
+        <id property="id" column="sid"/>
+        <result property="name" column="sname"/>
+        <result property="tid" column="stid"/>
+    </resultMap>
 </mapper>
