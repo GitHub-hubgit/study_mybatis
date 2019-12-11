@@ -15,5 +15,11 @@ public interface BlogDao {
     int updateBlog(Blog blog);
     int addBlog(Blog blog);
     List<Blog> queryBlogIf(Map map);
+    /**
+     * @date  2019/12/10 23:37
+     * @param map
+     * @return java.util.List<com.iotek.entity.Blog>
+     * @description 测试choose标签
+     */
     List<Blog> queryBlogChoose(Map map);
 }
